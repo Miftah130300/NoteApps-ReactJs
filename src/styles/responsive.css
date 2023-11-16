@@ -1,0 +1,24 @@
+@media (max-width: 768px) {
+    /* CSS untuk layar berukuran kecil (misalnya, ponsel) */
+    main {
+        align-items: stretch;
+    }
+
+    .app-bar{
+        width: 100%;
+    }
+    .kotakForm {
+        width: 100%;
+    }
+    .container {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .note-list{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin: 32px 0;
+    }
+}
