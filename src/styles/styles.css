@@ -112,26 +112,37 @@ section {
     color: #5b0888;
 }
 
+.add-button {
+    color: white;
+    background-color: #5b0888;
+    padding: 10px;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+}
+
 /*Tampilan Catatan*/
 
 .note-item{
     padding: 10px;
     border-radius: 10px;
     box-shadow: 1px 0 7px 2px rgba(0, 0, 0, 0.2);
-    position: relative;
     overflow: hidden;
+}
+
+.judul-item{
+    display: flex;
+    justify-content: space-between;
 }
 
 .contact-item__delete{
     width: 20px;
     height: 20px;
-    border-radius: 5px;
-    margin: 10px;
 }
 
 .note-item .contact-item__delete{
-    display: inline-block;
-    position: absolute;
+    display:flex;
     right: 0;
     top: 0;
 }
