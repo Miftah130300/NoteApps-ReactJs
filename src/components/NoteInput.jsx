@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import JudulSection from "./JudulSection";
+import PropTypes from 'prop-types';
 
 // eslint-disable-next-line react/prop-types
 export default class NoteInput extends React.Component{
@@ -50,4 +51,6 @@ export default class NoteInput extends React.Component{
     }
 }
 
-
+NoteInput.propTypes = {
+    addNote: PropTypes.func.isRequired,
+};

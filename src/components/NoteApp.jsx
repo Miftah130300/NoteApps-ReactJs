@@ -4,6 +4,9 @@ import { getInitialData, showFormattedDate} from "../utils/data"
 import AppBar from "./AppBar"
 import NoteInput from "./NoteInput"
 import NoteList from "./NoteList"
+import { Routes, Route, Link } from "react-router-dom"
+import DetailPage from "./DetailPage"
+import { string } from "prop-types"
 
 
 export default class NoteApps extends React.Component {
@@ -27,7 +30,7 @@ export default class NoteApps extends React.Component {
         this.setState((prevState)=>{
             const notes = [
                     ...prevState.notes, {
-                            id: +new Date(),
+                            id: String(+new Date()),
                             title,
                             body,
                             archived: false,
@@ -58,8 +61,12 @@ export default class NoteApps extends React.Component {
                 </nav>
             </header>
             <main>
-                <NoteInput addNote={this.onAddNoteHandler}/>
-                <NoteList notes={displayNotes} onDelete={this.onDeleteHandler}/>
+                <Link to={'/notes/new'}><div className="add-button">Add your note!</div></Link>
+                <Routes>
+                    <Route path="/" element={<NoteList notes={displayNotes} onDelete={this.onDeleteHandler}/>}/>
+                    <Route path="/notes/new"  element={<NoteInput addNote={this.onAddNoteHandler}/>}/>
+                    <Route path="/notes/:id" element={<DetailPage notes={displayNotes} />} />
+                </Routes>             
             </main>
             </>
         )
