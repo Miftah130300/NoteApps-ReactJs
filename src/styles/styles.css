@@ -8,15 +8,18 @@ body {
     font-family: sans-serif;
 }
 
-main, section, footer {
+main,
+section,
+footer {
     padding: 20px;
 }
 
 
 /*Navigasi */
-.app-bar{
+.app-bar {
     display: flex;
     justify-content: space-between;
+    padding: 10px;
 }
 
 .main-navigasi {
@@ -35,6 +38,19 @@ main, section, footer {
     padding: 10px;
 }
 
+.logout-btn {
+    padding: 10px;
+    background-color: white;
+    border-width: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #8e4fe6;
+    color: white;
+}
+
 /*Main app*/
 
 main {
@@ -44,7 +60,7 @@ main {
     flex-direction: column;
 }
 
-.kotakForm{
+.kotakForm {
     padding: 10px;
     padding-bottom: 10px;
     border-radius: 10px;
@@ -64,10 +80,12 @@ form {
     display: flex;
     width: 100%;
     flex-direction: column;
-    box-sizing: border-box; /* Menghitung lebar input termasuk padding dan border */
+    box-sizing: border-box;
+    /* Menghitung lebar input termasuk padding dan border */
 }
 
-input, textarea {
+input,
+textarea {
     font-family: sans-serif;
     display: inline-block;
     min-height: 44px;
@@ -77,7 +95,8 @@ input, textarea {
     margin: 2px 0 2px 0;
     padding: 10px;
     width: 100%;
-    box-sizing: border-box; /* Menghitung lebar input termasuk padding dan border */
+    box-sizing: border-box;
+    /* Menghitung lebar input termasuk padding dan border */
 }
 
 #description {
@@ -124,25 +143,25 @@ section {
 
 /*Tampilan Catatan*/
 
-.note-item{
+.note-item {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 1px 0 7px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
 }
 
-.judul-item{
+.judul-item {
     display: flex;
     justify-content: space-between;
 }
 
-.contact-item__delete{
+.contact-item__delete {
     width: 20px;
     height: 20px;
 }
 
-.note-item .contact-item__delete{
-    display:flex;
+.note-item .contact-item__delete {
+    display: flex;
     right: 0;
     top: 0;
 }
@@ -163,7 +182,7 @@ section {
 }
 
 /*Note List*/
-.note-list{
+.note-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 16px;
@@ -174,4 +193,62 @@ section {
 .note-list .alert {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/*Login Form*/
+.note-app {
+    background-color: #713abe;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    border-radius: 10px;
+    background-color: white;
+    width: 100%;
+    max-width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.login-form form {
+    max-width: 250px;
+}
+
+/* .login-form h2 {
+    color: #5b0888;
+} */
+
+.login-form form button {
+    background-color: #5b0888;
+    padding: 10px;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #8e4fe6;
+    color: white;
+}
+
+.search-logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.search-logout div {
+    margin-left: 10px;
+    cursor: pointer;
 }
