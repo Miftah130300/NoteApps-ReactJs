@@ -1,56 +1,55 @@
-// eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useState } from "react";
 import JudulSection from "./JudulSection";
 import PropTypes from 'prop-types';
 
-// eslint-disable-next-line react/prop-types
-export default class NoteInput extends React.Component{
-    constructor(props){
-        super(props)
+function NoteInput({ addNote }) {
+    const [note, setNote] = useState({
+        title: '',
+        body: ''
+    });
 
-        this.state= {
+    const { title, body } = note;
+
+    const onTitleChange = (event) => {
+        setNote({
+            ...note,
+            title: event.target.value
+        });
+    };
+
+    const onBodyChange = (event) => {
+        setNote({
+            ...note,
+            body: event.target.value
+        });
+    };
+
+    const onInputNoteHandler = (event) => {
+        event.preventDefault();
+        addNote({
+            title,
+            body
+        });
+        setNote({
             title: '',
-            body: '',
-            createdAt: ''
-        }
+            body: ''
+        });
+    };
 
-        this.onInputNoteHandler = this.onInputNoteHandler.bind(this)
-        this.onTitleChange = this.onTitleChange.bind(this)
-        this.onBodyChange = this.onBodyChange.bind(this)
-    }
-    onTitleChange(event){
-        this.setState(()=>{
-            return{
-                title: event.target.value
-            }
-        })
-    }
-    onBodyChange(event){
-        this.setState(()=>{
-            return{
-                body: event.target.value
-            }
-        })
-    }
-    onInputNoteHandler(event){
-        event.preventDefault()
-        this.props.addNote(this.state)
-    }
-
-    render(){
-        return(
+    return (
         <section className="kotakForm">
             <JudulSection nama={'New Note'}/>
-                <form className="InputNote" onSubmit={this.onInputNoteHandler}>
-                    <input id="title" type="text" placeholder="title" value={this.state.title} onChange={this.onTitleChange}/>
-                    <textarea id="description" name="deskripsi" placeholder="add your note.." rows="4" cols="50" value={this.state.body} onChange={this.onBodyChange}></textarea>
-                    <button className="save-button" type="submit">Submit</button>
-                </form>
+            <form className="InputNote" onSubmit={onInputNoteHandler}>
+                <input id="title" type="text" placeholder="title" value={title} onChange={onTitleChange}/>
+                <textarea id="description" name="deskripsi" placeholder="add your note.." rows="4" cols="50" value={body} onChange={onBodyChange}></textarea>
+                <button className="save-button" type="submit">Submit</button>
+            </form>
         </section>
-        )
-    }
+    );
 }
 
 NoteInput.propTypes = {
     addNote: PropTypes.func.isRequired,
 };
+
+export default NoteInput;
