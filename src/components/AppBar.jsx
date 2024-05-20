@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import SearchNote from "./SearchNote";
 
-function AppBar({name, logout}) {
+function AppBar({name, searchTerm, setSearchTerm}) {
     return (
         <div id="appBar" className="app-bar">
             <h1>{name}</h1>
-            <button className="logout-btn" onClick={logout}>Logout</button>
+            <SearchNote searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
         </div>
     ) 
 }

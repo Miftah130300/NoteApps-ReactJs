@@ -1,39 +1,24 @@
-@media (max-width: 920px) {
-
+@media (max-width: 768px) {
     /* CSS untuk layar berukuran kecil (misalnya, ponsel) */
     main {
         align-items: stretch;
     }
 
-    .app-bar {
+    .app-bar{
         width: 100%;
     }
-
     .kotakForm {
         width: 100%;
     }
-
     .container {
         width: 100%;
         margin-left: 0;
     }
 
-    .note-list {
+    .note-list{
         display: grid;
         grid-template-columns: 1fr;
         gap: 16px;
         margin: 32px 0;
-    }
-
-    .note-app {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .login-form {
-        width: 100%;
-        max-width: 300px;
     }
 }
